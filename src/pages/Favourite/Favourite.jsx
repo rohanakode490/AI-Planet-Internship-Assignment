@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import Navbar from "../../components/Navbar/Navbar";
+import Dashboard from "../../components/Dashboard/Dashboard";
 
 const Favourite = () => {
   return (
-    <div>Favourite</div>
-  )
-}
+    <div>
+      <Navbar/>
+      <Dashboard/>
+    </div>
+  );
+};
 
-export default Favourite
+export default Favourite;

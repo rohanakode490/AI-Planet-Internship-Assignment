@@ -1,0 +1,11 @@
+.filter,
+.utilities {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.newest {
+  flex: 1;
+  /* position: relative; */
+}

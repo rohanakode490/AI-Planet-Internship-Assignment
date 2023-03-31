@@ -5,3 +5,42 @@ body{
   margin: 0;
   padding: 0;
 }
+
+:root {
+  /* fonts */
+  --desktop-body-1-b1-400: Inter;
+  --desktop-heading-5-h5-500: Poppins;
+
+  /* font sizes */
+  --font-size-sm: 14px;
+  --desktop-body-1-b1-400-size: 16px;
+  --desktop-heading-5-h5-500-size: 20px;
+  --desktop-heading-6-h6-400-size: 17px;
+  --desktop-heading-1-h1-600-size: 42px;
+
+  /* Colors */
+  --celestial-hue-celestial-light: #fff;
+  --celestial-grey-cg-500: #666;
+  --celestial-grey-cg-700: #333;
+  --celestial-blue-cb-900: #003145;
+  --celestial-grey-cg-900: #222;
+  --celestial-green-cg-600: #44924c;
+
+  /* Gaps */
+  --gap-13xl: 32px;
+  --gap-7xs: 6px;
+  --gap-5xl: 24px;
+  --gap-5xs: 8px;
+
+  /* Paddings */
+  --padding-5xl: 24px;
+  --padding-base: 16px;
+  --padding-lg: 18px;
+  --padding-5xs: 8px;
+
+  /* border radiuses */
+  --br-base: 16px;
+  --br-5xs: 8px;
+  --br-81xl: 100px;
+  --br-3xs: 10px;
+}

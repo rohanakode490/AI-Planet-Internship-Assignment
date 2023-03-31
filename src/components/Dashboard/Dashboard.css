@@ -1,6 +1,32 @@
 .dash {
   background: #003145;
-  width: 100%;  
+  width: 100%;
   height: 26rem;
-  padding-right: 10rem;
+  color: white;
+  padding-right: 0rem;
+  display: flex;
+  justify-content: space-evenly;
+
+  background-image: url("../../assets/waves.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
+
+.left {
+  padding: 5.5rem 0rem 0rem 8.875rem;
+}
+
+.description {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.right {
+  transform: scale(0.5);
+  position: relative;
+  top: -3rem;
+}
+
