@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&display=swap");
 
 body{
   display: border-box;
   margin: 0;
   padding: 0;
+  background-color: #F5F5F5;
+  line-height: normal;
 }
 
 :root {
@@ -13,24 +16,33 @@ body{
 
   /* font sizes */
   --font-size-sm: 14px;
-  --desktop-body-1-b1-400-size: 16px;
   --desktop-heading-5-h5-500-size: 20px;
-  --desktop-heading-6-h6-400-size: 17px;
   --desktop-heading-1-h1-600-size: 42px;
+  --desktop-body-1-b1-400-size: 16px;
+  --desktop-heading-6-h6-400-size: 17px;
+  --desktop-body-2-b2-400-size: 14px;
+  --desktop-heading-3-h3-500-size: 29px;
 
   /* Colors */
-  --celestial-hue-celestial-light: #fff;
+  --celestial-hue-celestial-light: #fff;  
+  --celestial-grey-cg-200: #CCCCCC;
+  --celestial-grey-cg-400: #858585;
   --celestial-grey-cg-500: #666;
   --celestial-grey-cg-700: #333;
-  --celestial-blue-cb-900: #003145;
   --celestial-grey-cg-900: #222;
-  --celestial-green-cg-600: #44924c;
+  --miscellaneous-m-4: #f8f9fd;
+  --celestial-hue-celestial-light: #fff;
+  --celestial-blue-cb-900: #003145;
+  --celestial-green-cg-600: #44924c; 
+  --color-silver: #b7b7b7;
+  --color-whitesmoke-100: #f5f5f5;
 
   /* Gaps */
   --gap-13xl: 32px;
   --gap-7xs: 6px;
   --gap-5xl: 24px;
   --gap-5xs: 8px;
+  --gap-base: 16px;
 
   /* Paddings */
   --padding-5xl: 24px;
@@ -40,7 +52,8 @@ body{
 
   /* border radiuses */
   --br-base: 16px;
-  --br-5xs: 8px;
-  --br-81xl: 100px;
   --br-3xs: 10px;
+  --br-5xs: 8px;
+  --br-8xs: 5px;
+  --br-81xl: 100px;
 }

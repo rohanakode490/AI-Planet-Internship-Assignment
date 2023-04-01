@@ -1,16 +1,20 @@
 import React from 'react';
 import './Button.css';
+import { Link } from 'react-router-dom';
 
-const Button = ({title, type}) => {
+const Button = ({type}) => {
   return (
     type ? (
-      //To form
-      <div></div>
+      //Submit form
+      <Link to='/' className='btn'>
+        Upload Submission
+      </Link>
     ):
     (
-      <button className='btn'>
-        Upload {title}
-      </button>
+      //To form
+      <Link to='/form' className='btn'>
+        Upload Submission
+      </Link>
     )
   )
   

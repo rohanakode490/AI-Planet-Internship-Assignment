@@ -12,6 +12,10 @@
   background-position: bottom;
 }
 
+.heading{
+  color: #FFFFFF;
+}
+
 .left {
   padding: 5.5rem 0rem 0rem 8.875rem;
 }
@@ -22,6 +26,7 @@
   font-weight: 500;
   font-size: 17px;
   line-height: 26px;
+  color: #FFFFFF;
 }
 
 .right {
