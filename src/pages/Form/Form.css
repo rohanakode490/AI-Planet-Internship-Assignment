@@ -18,6 +18,7 @@ input[type="text"]::placeholder {
     font-weight: 600;
 }
 
+
 h1 {
   width: 408px;
   /* height: 44px; */
@@ -51,6 +52,8 @@ h1 {
   font-size: 17px;
   line-height: 30px;
   color: #222222;
+  display: flex;
+  justify-content: space-between;
 }
 
 .shortip {
@@ -59,15 +62,6 @@ h1 {
   width: 50rem;
   height: 2rem;
   padding-left: 1rem;
-}
-
-.cover-image {
-  position: relative;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 26px;
-  color: #222222;
 }
 
 .minimum-resolution-360px {
@@ -99,12 +93,7 @@ h1 {
   justify-content: center;
 }
 
-.description-form {
-  font-family: var(--desktop-heading-6-h6-400);
-  color: var(--celestial-grey-cg-900);
-}
 
-.description-form,
 .write-a-long {
   position: relative;
 }
@@ -178,4 +167,10 @@ input {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+}
+
+.error{
+  color: red;
+  font-weight: 400;
+  margin: 0;
 }

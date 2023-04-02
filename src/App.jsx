@@ -12,6 +12,7 @@ function App() {
         <Route path="/" element={<All />} />
         <Route path="/favsubmissions" element={<Favourite />} />
         <Route path="/form" element={<Form />} />
+        <Route path="/image" element={<Image />} />
       </Routes>
     </div>
   );
