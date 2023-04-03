@@ -1,0 +1,108 @@
+.details {
+  margin: 6rem 9rem;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: flex-start; */
+
+  max-width: 700px;
+  max-height: 700px;
+  display: grid;
+  grid-template-columns: 2fr 0.5fr;
+  grid-gap: 7.25rem;
+}
+
+.detail-heading {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #222222;
+}
+
+.detail-description {
+  width: 43.75rem;
+  height: 43.75rem;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #333333;
+  word-wrap: break-word;
+}
+
+.details-hackthon{
+  width: 17.75rem;
+  height: 11.75rem;
+}
+
+.hackthon {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: #858585;
+}
+
+.hackthon-name {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  color: #333333;
+}
+
+.cal-icon,
+.github-icon {
+  width: auto;
+  padding-top: 3px;
+  padding-right: 1px;
+}
+
+.detail-period {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #858585;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #666666;
+}
+
+.details-links {
+  margin: 1rem 0rem;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 175%;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.github-icon {
+  margin-top: 2px;
+}
+
+.git-link {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 7px;
+}
+
+.a-text {
+  padding: 20%;
+}

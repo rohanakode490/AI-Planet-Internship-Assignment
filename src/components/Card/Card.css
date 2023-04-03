@@ -58,7 +58,8 @@
   color: var(--celestial-grey-cg-700);
   display: inline-block;
   height: 3.75rem;
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
+  word-wrap: initial;
 }
 
 .uploaded-6-days {

@@ -13,7 +13,7 @@ const All = () => {
   // useEffect(() => {
   //   console.log(data);
   //   localStorage.removeItem("data");
-  // }, [data]);
+  // }, [data]); 
 
   return (
     <>

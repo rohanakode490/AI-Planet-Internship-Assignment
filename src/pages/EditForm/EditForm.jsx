@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-import "./Form.css";
+import "./EditForm.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
 import { DatePicker } from "antd";
 import moment from "moment";
+import { useParams } from "react-router-dom";
 
-const Form = ({id, increment}) => {
+const EditForm = () => {
+    const{id}=useParams();
+    console.log(id)
   const [char, setchar] = useState(0);
   const [stdate, setstdate] = useState(null);
   const [enddate, setenddate] = useState(null);
@@ -261,7 +264,6 @@ const Form = ({id, increment}) => {
         ></div>
         <Button
           id={id} 
-          increment={increment}
           type={true}
           goto={goto}
           formvalues={formvalues}
@@ -274,4 +276,4 @@ const Form = ({id, increment}) => {
   );
 };
 
-export default Form;
+export default EditForm;
