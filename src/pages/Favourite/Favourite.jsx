@@ -47,7 +47,7 @@ const Favourite = () => {
         <div className="utilities">
           {/* Search Bar  */}
           <input
-            type="text"
+        c    type="text"
             placeholder="Search..."
             className="search"
             onChange={handleSearch}
