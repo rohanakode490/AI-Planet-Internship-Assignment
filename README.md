@@ -1,5 +1,12 @@
 # AI-Planet-Internship-Assignment
 
+## Deployed Website/Live Demo
+
+Please follow this link to view a deployed version of this project on netlify.\
+[Live Demo](https://rohan-akode-ai-planet-assignment.netlify.app/)
+
+If the link did not work please visit: https://rohan-akode-ai-planet-assignment.netlify.app/
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
