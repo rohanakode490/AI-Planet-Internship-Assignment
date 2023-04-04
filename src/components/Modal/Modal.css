@@ -84,5 +84,6 @@
     border-radius: 5px;
     border: none;
     margin: 0.5rem;
+    padding: 0.15rem 0.45rem;
     cursor: pointer;
 }

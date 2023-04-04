@@ -18,11 +18,8 @@ const Modal = ({ id }) => {
     const handledelete = () => {
       const data = JSON.parse(localStorage.getItem("data"));
       const newdata = data.filter((item) => {
-        console.log(typeof item.id, typeof id)
-        return item.id !== parseInt(id);
+        return parseInt(item.id) !== parseInt(id);
       });
-      console.log("newdata", newdata);
-      console.log(id);
       localStorage.setItem("data", JSON.stringify(newdata));
     };
 

@@ -7,27 +7,23 @@ import moment from "moment";
 import { useParams } from "react-router-dom";
 
 const EditForm = () => {
-    const{id}=useParams();
-    console.log(id)
-  const [char, setchar] = useState(0);
+  const { id } = useParams();
+  
+  const data = JSON.parse(localStorage.getItem("data"));
+  const prop =  data.find((item) => {
+    return parseInt(item.id) === parseInt(id);
+  });
+  
+  const [char, setchar] = useState(prop.description.length);
   const [stdate, setstdate] = useState(null);
   const [enddate, setenddate] = useState(null);
-  const [img, setImg] = useState(null);
+  const [img, setImg] = useState(prop.image);
 
-  // For Form validation
-  const initialvalues = {
-    title: "",
-    summary: "",
-    description: "",
-    hackathon_name: "",
-    gitHub_link: "",
-    other_link: "",
-  };
-
-  const [formvalues, setformvalues] = useState(initialvalues);
+  const [formvalues, setformvalues] = useState(prop);
   const [formerrors, setformerrors] = useState({});
   const [isSubmit, setisSubmit] = useState(false);
   const [goto, setgoto] = useState(false);
+  const [edit, setedit] = useState(false);
 
   const handleTextChange = (event) => {
     setchar(event.target.value.length);
@@ -45,34 +41,27 @@ const EditForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    // console.log(value);
     setformvalues({ ...formvalues, [name]: value });
-    // console.log(moment(value).format())
   };
 
-  const handledate = (type, date) => {
-    type === "st" ? setstdate(moment(date).format()) : setenddate(date);
-    console.log("start", stdate);
-    console.log("end", enddate);
+  const handledate = (date, datestring, type) => {
+    if(date!==null)
+    {
+      type === "st" ? setstdate(date.$d) :  setenddate(date.$d);
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setformerrors(validate(formvalues));
     setisSubmit(true);
+    setedit(true);
     if (Object.keys(formerrors).length === 0) {
       setgoto(true);
     } else {
       setgoto(false);
     }
   };
-
-  useEffect(() => {
-    console.log(formerrors);
-    if (Object.keys(formerrors).length === 0 && isSubmit) {
-      console.log(formvalues);
-    }
-  }, [formerrors]);
 
   const validate = (values) => {
     const errors = {};
@@ -110,7 +99,11 @@ const EditForm = () => {
         <label>
           <p className="label">
             {" "}
-            Title<span className="error" maxLength={15}> {formerrors.title}</span>
+            Title
+            <span className="error" maxLength={15}>
+              {" "}
+              {formerrors.title}
+            </span>
           </p>
           <input
             type="text"
@@ -204,8 +197,8 @@ const EditForm = () => {
                 type="date"
                 placeholder="Select start date"
                 name="start_date"
-                onChange={(date) => handledate("st", date)}
-              />
+                onChange={(date,dateString) => handledate(date, dateString, "st")}
+                />
             </div>
           </div>
 
@@ -221,7 +214,7 @@ const EditForm = () => {
                 type="date"
                 placeholder="Select end date"
                 name="end_date"
-                onChange={(date) => handledate("end", moment(date).format())}
+                onChange={(date,dateString) => handledate(date, dateString, "end")}
               />
             </div>
           </div>
@@ -255,15 +248,9 @@ const EditForm = () => {
             onChange={handleChange}
           />
         </label>
-        <div
-          style={{
-            borderTop: "15px solid #ccc ",
-            marginLeft: 20,
-            marginRight: 20,
-          }}
-        ></div>
         <Button
-          id={id} 
+          edit={edit}
+          id={id}
           type={true}
           goto={goto}
           formvalues={formvalues}

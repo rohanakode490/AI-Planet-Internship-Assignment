@@ -1,20 +1,12 @@
-/* .dash-2 {
-    background: #003145;
-    width: 100%;
-    height: 26rem;
-    color: white;
-    padding-right: 0rem;
-    display: flex;
-    justify-content: space-evenly;
-  } */
 
 .card-dashboard {
   background-color: #003145;
   color: white;
+  height: auto;
+  padding: 2rem 0;
 }
 
 .card-dash {
-  height: 16rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -23,7 +15,6 @@
 
 .detail-title {
   width: 836px;
-  height: 63px;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
@@ -41,7 +32,6 @@
 
 .card-btn {
   width: 7rem;
-  height: 3rem;
   border: 2px solid #ccc;
   border-radius: 0.5rem;
   background-color: transparent;
@@ -53,12 +43,7 @@
   font-size: 1.2rem;
 }
 
-.bottom-dash {
-  height: 8rem;
-}
-
 .dash-summary {
-  height: 3rem;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
@@ -66,12 +51,11 @@
   line-height: 26px;
   color: #ffffff;
   align-self: stretch;
-  padding-left: 8.875rem;
+  padding: 2rem 8.875rem;
 }
 
 .fav-date {
   padding-left: 8.875rem;
-  height: auto;
   display: flex;
 }
 
@@ -90,7 +74,7 @@
   background-color: #255973;
   width: auto;
   border: 2px solid #ccc;
-  padding: 0.6rem;
+  padding: 0.6rem 1rem;
   margin-left: 2rem;
   border-radius: var(--br-81xl);
   display: flex;

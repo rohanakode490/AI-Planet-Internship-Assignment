@@ -42,15 +42,11 @@ const Form = ({id, increment}) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    // console.log(value);
     setformvalues({ ...formvalues, [name]: value });
-    // console.log(moment(value).format())
   };
 
   const handledate = (type, date) => {
     type === "st" ? setstdate(moment(date).format()) : setenddate(date);
-    console.log("start", stdate);
-    console.log("end", enddate);
   };
 
   const handleSubmit = (e) => {
@@ -64,12 +60,6 @@ const Form = ({id, increment}) => {
     }
   };
 
-  useEffect(() => {
-    console.log(formerrors);
-    if (Object.keys(formerrors).length === 0 && isSubmit) {
-      console.log(formvalues);
-    }
-  }, [formerrors]);
 
   const validate = (values) => {
     const errors = {};
@@ -201,6 +191,7 @@ const Form = ({id, increment}) => {
                 type="date"
                 placeholder="Select start date"
                 name="start_date"
+                // value={stdate}
                 onChange={(date) => handledate("st", date)}
               />
             </div>
@@ -218,6 +209,7 @@ const Form = ({id, increment}) => {
                 type="date"
                 placeholder="Select end date"
                 name="end_date"
+                // value={enddate}
                 onChange={(date) => handledate("end", moment(date).format())}
               />
             </div>
@@ -252,13 +244,6 @@ const Form = ({id, increment}) => {
             onChange={handleChange}
           />
         </label>
-        <div
-          style={{
-            borderTop: "15px solid #ccc ",
-            marginLeft: 20,
-            marginRight: 20,
-          }}
-        ></div>
         <Button
           id={id} 
           increment={increment}

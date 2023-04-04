@@ -1,4 +1,3 @@
-import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import All from "./pages/All/All";
@@ -10,11 +9,23 @@ import EditForm from "./pages/EditForm/EditForm";
 function App() {
   const data = JSON.parse(localStorage.getItem("data"));
   const [id, setid] = useState(data!==null?data.length:0);
-  
+  const [fav, setfav] = useState(false);
+
+  const handlefav = (ID) => {
+    setfav((prev)=>!prev);
+    const newdata = data.map((item) => {
+      if(parseInt(item.id) === parseInt(ID))
+      {
+        return{...item, favourite: fav};
+      }
+      return item;
+    });
+    
+    localStorage.setItem("data", JSON.stringify(newdata));
+  };
+
   const increment = () => {
-    console.log("prev",id);
     setid(prevId => prevId + 1);
-    console.log(id);
   };
   
 
@@ -26,7 +37,7 @@ function App() {
         <Route path="/form" element={<Form id={id} increment={increment} />} />
         <Route path={`/editform/:id`} element={<EditForm/>} />
         <Route path="/image" element={<Image />} />
-        <Route path={`/dash/:id`} element={<CardDetail/>} />
+        <Route path={`/dash/:id`} element={<CardDetail fav={fav} handlefav={handlefav}/>} />
       </Routes>
     </div>
   );
