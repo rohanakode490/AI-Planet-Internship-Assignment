@@ -8,7 +8,13 @@ const Card = (prop) => {
     const now = new Date();
     const diffInMs = now - date;
     const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
-    return diffInDays;
+    if (diffInDays === 0) {
+      return "uploaded moments ago";
+    } else if (diffInDays === 1) {
+      return "uploaded 1 day ago";
+    } else {
+      return `uploaded ${diffInDays} days ago`;
+    }
   };
 
   return (
@@ -22,13 +28,7 @@ const Card = (prop) => {
       <div className="card-summary">{prop.summary}</div>
       <div className="card-stats">
         <div className="card-view">
-          {differncebetweendates(prop.submit_date) === 0 ? (
-            <i className="card-time">uploaded moments ago</i>
-          ) : (
-            <i className="card-time">
-              uploaded {differncebetweendates(prop.submit_date)} ago
-            </i>
-          )}
+          <i className="card-time">{differncebetweendates(prop.submit_date)}</i>
         </div>
       </div>
     </Link>

@@ -11,16 +11,22 @@ const All = () => {
 
   const data = JSON.parse(localStorage.getItem("data"));
 
-  const differncebetweendates = (d) => {
-    const date = new Date(d);
-    const now = new Date();
-    const diffInMs = now - date;
-    const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
-    return diffInDays;
-  };
+  // console.warn(filter);
+
+  // const differncebetweendates = (d) => {
+  //   const date = new Date(d);
+  //   const now = new Date();
+  //   const diffInMs = now - date;
+  //   const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+  //   return diffInDays;
+  // };
 
   const handleSearch = (e) => {
     setsearch(e.target.value);
+  };
+
+  const handleFilterChange = (e) => {
+    setfilter(parseInt(e.target.value)); // parse the selected value to an integer
   };
 
   return (
@@ -57,7 +63,8 @@ const All = () => {
             name=""
             id=""
             className="dropdown"
-            onClick={(e) => setfilter(e.target.value)}
+            value={filter}
+            onChange={handleFilterChange}
           >
             <option value={1} className="dropdown-item">
               Newest
@@ -83,12 +90,14 @@ const All = () => {
               }
             })
             .sort((a, b) => {
-              const x = differncebetweendates(a.submit_date);
-              const y = differncebetweendates(b.submit_date);
-              if (filter == 1) {
-                return x < y;
+              if (filter === 1) {
+                console.log("filter", filter);
+                console.log(new Date(a.submit_date) - new Date(b.submit_date));
+                return new Date(a.submit_date) - new Date(b.submit_date);
               } else {
-                return x >= y;
+                console.log("filter", filter);
+                console.log(new Date(b.submit_date) - new Date(a.submit_date));
+                return new Date(b.submit_date) - new Date(a.submit_date);
               }
             })
             .map((card) => <Card key={card.id} {...card} />)}
